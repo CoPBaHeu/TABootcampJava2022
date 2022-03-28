@@ -14,8 +14,9 @@ public class NumToWordsUsingMethod {
 		 */
 		public static void main(String[] args) {
 			//TODO complete the code to print text value of 8, 9 and 10
-			printMyWord();
-
+			for (int i = 8; i <=10; i++) {
+				printMyWord(i);
+			}
 		}
 
 		private static void printMyWord(int i) {
@@ -47,8 +48,4 @@ public class NumToWordsUsingMethod {
 			System.out.println(numText);
 			
 		}
-
-
-		
-
 	}

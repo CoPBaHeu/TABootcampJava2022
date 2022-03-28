@@ -15,18 +15,29 @@ public class OperatorActivity {
 		int i = 8;
 		int j = 5;
 		
-		// Subtract numbers
+		// Subtraction
 		int result = i-j;
 		
 		// Print result
 		System.out.println("Difference = " + result);
 		
-		// Add numbers
-		
+		// Addition
+		result = i+j;
 		
 		// Print result
-		
-		
+		System.out.println("Summ is: " + result);
+
+		// Division
+		result = i/j;
+		System.out.println("Quotient is:" + result);
+
+		//Multiplication
+		result = i*j;
+		System.out.println("Product is:" + result);
+
+		//Modulo
+		result = i%j;
+		System.out.println("Remainder is:" + result);
 	}
 
 }
