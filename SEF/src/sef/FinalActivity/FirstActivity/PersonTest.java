@@ -49,22 +49,6 @@ public class PersonTest extends TestCase {
         assertEquals("Validation does not work",oldName, p1.getName());
     }
 
-    /*public void testSetAndGetName() {
-        try {
-            p1.setName("Tom");
-        } catch (IllegalNameException illegalNameException) {
-            System.out.println(illegalNameException.getMessage());
-        }
-        assertEquals("Tom", p1.getName());
-
-        try {
-            p1.setName("Tom1");
-        } catch (IllegalNameException illegalNameException) {
-            System.out.println(illegalNameException.getMessage());
-        }
-        assertEquals("Tom", p1.getName());
-    }*/
-
     public void testIntroducing() {
         int newAge = 30;
         String newName = "Jack";
