@@ -2,12 +2,13 @@ package sef.FinalActivity.FirstActivity;
 
 import junit.framework.TestCase;
 
+
 public class EmployeeTest extends TestCase {
 
     private Employee e1, e2, e3, e4;
     private String name, job, com;
     private int age, sal;
-    Employee emp[];
+    Employee[] emp;
 
 
     public void setUp() throws Exception {
@@ -30,29 +31,14 @@ public class EmployeeTest extends TestCase {
         for (int i = 0; i < emp.length; i++) {
             emp[i] = new Employee();
         }
-        emp[0].name = e1.getName();
-        emp[0].age = e1.getAge();
-        emp[0].JobTitle = e1.getJobTitle();
-        emp[0].company = e1.getCompany();
-        emp[0].salary = e1.getSalary();
-
-        emp[1].name = e2.getName();
-        emp[1].age = e2.getAge();
-        emp[1].JobTitle = e2.getJobTitle();
-        emp[1].company = e2.getCompany();
-        emp[1].salary = e2.getSalary();
-
-        emp[2].name = e3.getName();
-        emp[2].age = e3.getAge();
-        emp[2].JobTitle = e3.getJobTitle();
-        emp[2].company = e3.getCompany();
-        emp[2].salary = e3.getSalary();
-
-        emp[3].name = e4.getName();
-        emp[3].age = e4.getAge();
-        emp[3].JobTitle = e4.getJobTitle();
-        emp[3].company = e4.getCompany();
-        emp[3].salary = e4.getSalary();
+        Employee[] arr = new Employee[]{e1, e2, e3, e4};
+        for (int i = 0; i < arr.length; i++) {
+            emp[i].name = arr[i].getName();
+            emp[i].age = arr[i].getAge();
+            emp[i].jobTitle = arr[i].getJobTitle();
+            emp[i].company = arr[i].getCompany();
+            emp[i].salary = arr[i].getSalary();
+        }
     }
 
 
@@ -68,6 +54,7 @@ public class EmployeeTest extends TestCase {
     public void testSortFromLargeToLess() {
         new Employee().sortFromLargeToLess(emp);
     }
+
     public void testIntroducing() throws IllegalNameException {
         job = "Nobody";
         com = "Nowhere";
@@ -80,8 +67,26 @@ public class EmployeeTest extends TestCase {
         testEmp.setSalary(sal);
         testEmp.setCompany(com);
         testEmp.setJobTitle(job);
-        String result  = "My name is " + name + " and I am " + age + " years old" + "\nI am work as "
+        String result = "My name is " + name + " and I am " + age + " years old" + "\nI am work as "
                 + job + " in " + com + "\nAnd my salary is a great secret. It's a joke! It's " + sal;
         assertEquals(result, testEmp.introducing());
+    }
+
+    // testing extra task 4
+    public void testSortByNames() {
+        e1 = new Employee("Isabella", "Valois", 45, "Emperor", "Roman Empire", 2000);
+        e2 = new Employee("Carlos", "Liechtenstein", 20, "Emperor", "Roman Empire", 1000);
+        e3 = new Employee("Carlos", "Habsburg", 15, "Princess", "Burgundian kingdom", 500);
+        e4 = new Employee("Isabella", "Habsburg", 30, "King", "French kingdom", 1500);
+        Employee[] arr = new Employee[]{e1, e2, e3, e4};
+        for (int i = 0; i < arr.length; i++) {
+            emp[i].name = arr[i].getName();
+            emp[i].surname = arr[i].getSurName();
+            emp[i].age = arr[i].getAge();
+            emp[i].jobTitle = arr[i].getJobTitle();
+            emp[i].company = arr[i].getCompany();
+            emp[i].salary = arr[i].getSalary();
+        }
+        new Employee().sortByNames(emp);
     }
 }

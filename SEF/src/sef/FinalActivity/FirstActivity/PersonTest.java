@@ -61,4 +61,28 @@ public class PersonTest extends TestCase {
         String result = "My name is " + newName + " and I am " + newAge + " years old";
         assertEquals("Introducing message is incorrect",result, p1.introducing());
     }
+    //Testing of methods added in extra task 4
+    //so that the % of coverage does not decrease ))))
+    public void testSetAndGetSurnameSuccess() {
+        String testSurname = "Anderson";
+        try {
+            p1.setSurName(testSurname);
+        } catch (IllegalNameException illegalNameException) {
+            System.out.println(illegalNameException.getMessage());
+        }
+        assertEquals(testSurname, p1.getSurName());
+    }
+
+    public void testSetAndGetSurnameFailed() {
+        String oldSurname = p1.getSurName();
+        String testSurname = "Smith1";
+        try {
+            p1.setSurName(testSurname);
+        } catch (IllegalNameException illegalNameException) {
+
+            assertTrue("No error message", illegalNameException.getMessage().length() > 0);
+
+        }
+        assertEquals("Validation does not work",oldSurname, p1.getSurName());
+    }
 }

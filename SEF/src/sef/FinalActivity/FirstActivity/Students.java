@@ -1,6 +1,6 @@
 package sef.FinalActivity.FirstActivity;
 
-class Students extends Person {
+public class Students extends Person {
 
     private String schoolName;
 
